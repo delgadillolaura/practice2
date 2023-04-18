@@ -36,6 +36,8 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
+// Log application environment
+Log.Information("Application running in {Environment} environment", builder.Environment.EnvironmentName);
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "QA" || app.Environment.EnvironmentName == "UAT")
